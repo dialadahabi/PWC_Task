@@ -3,27 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		349C23192541CB6A001D120B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23182541CB6A001D120B /* AppDelegate.swift */; };
 		349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C231A2541CB6A001D120B /* SceneDelegate.swift */; };
-		349C231D2541CB6A001D120B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C231C2541CB6A001D120B /* ViewController.swift */; };
 		349C23202541CB6A001D120B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349C231E2541CB6A001D120B /* Main.storyboard */; };
 		349C23222541CB6E001D120B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349C23212541CB6E001D120B /* Assets.xcassets */; };
 		349C23252541CB6E001D120B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349C23232541CB6E001D120B /* LaunchScreen.storyboard */; };
+		349C23312541CEDD001D120B /* TrackingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23302541CEDD001D120B /* TrackingMapViewController.swift */; };
+		349C23352541CEEC001D120B /* TrackingMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23342541CEEC001D120B /* TrackingMapPresenter.swift */; };
+		349C23382541CF5A001D120B /* TrackingMapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23372541CF5A001D120B /* TrackingMapModel.swift */; };
+		349C233C2541D161001D120B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C233B2541D161001D120B /* Networking.swift */; };
+		349C23432541D7BA001D120B /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23422541D7BA001D120B /* TrackingService.swift */; };
+		349C23462541D7C7001D120B /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23452541D7C7001D120B /* NewsService.swift */; };
+		349C23492541D7D4001D120B /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23482541D7D4001D120B /* CountriesService.swift */; };
+		349C234D2541D8D1001D120B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C234C2541D8D1001D120B /* CountryModel.swift */; };
+		349C23502541D955001D120B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C234F2541D955001D120B /* NewsModel.swift */; };
+		D5410EF51448C734AF7916BC /* Pods_PWC_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EBA026940B72CDB556E84A /* Pods_PWC_Task.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		349C23152541CB6A001D120B /* PWC-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWC-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		349C23182541CB6A001D120B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349C231A2541CB6A001D120B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		349C231C2541CB6A001D120B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		349C231F2541CB6A001D120B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		349C23212541CB6E001D120B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		349C23242541CB6E001D120B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		349C23262541CB6E001D120B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		349C23302541CEDD001D120B /* TrackingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMapViewController.swift; sourceTree = "<group>"; };
+		349C23342541CEEC001D120B /* TrackingMapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMapPresenter.swift; sourceTree = "<group>"; };
+		349C23372541CF5A001D120B /* TrackingMapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingMapModel.swift; sourceTree = "<group>"; };
+		349C233B2541D161001D120B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		349C23422541D7BA001D120B /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		349C23452541D7C7001D120B /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		349C23482541D7D4001D120B /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
+		349C234C2541D8D1001D120B /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		349C234F2541D955001D120B /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		42FB6B874A6F0087FA1DD35C /* Pods-PWC-Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWC-Task.debug.xcconfig"; path = "Target Support Files/Pods-PWC-Task/Pods-PWC-Task.debug.xcconfig"; sourceTree = "<group>"; };
+		A9EBA026940B72CDB556E84A /* Pods_PWC_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWC_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAA896C7734FC0CB8BBEAA79 /* Pods-PWC-Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWC-Task.release.xcconfig"; path = "Target Support Files/Pods-PWC-Task/Pods-PWC-Task.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5410EF51448C734AF7916BC /* Pods_PWC_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,8 @@
 			children = (
 				349C23172541CB6A001D120B /* PWC-Task */,
 				349C23162541CB6A001D120B /* Products */,
+				C549182EEE0485264175533F /* Pods */,
+				3EF0C2B2B276AC5B4F75905C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +79,72 @@
 		349C23172541CB6A001D120B /* PWC-Task */ = {
 			isa = PBXGroup;
 			children = (
+				349C234B2541D8BE001D120B /* News */,
+				349C23412541D7A7001D120B /* Service */,
+				349C233A2541D151001D120B /* Helper */,
+				349C232F2541CEBA001D120B /* Tracking */,
 				349C23182541CB6A001D120B /* AppDelegate.swift */,
 				349C231A2541CB6A001D120B /* SceneDelegate.swift */,
-				349C231C2541CB6A001D120B /* ViewController.swift */,
 				349C231E2541CB6A001D120B /* Main.storyboard */,
 				349C23212541CB6E001D120B /* Assets.xcassets */,
 				349C23232541CB6E001D120B /* LaunchScreen.storyboard */,
 				349C23262541CB6E001D120B /* Info.plist */,
 			);
 			path = "PWC-Task";
+			sourceTree = "<group>";
+		};
+		349C232F2541CEBA001D120B /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				349C23302541CEDD001D120B /* TrackingMapViewController.swift */,
+				349C23342541CEEC001D120B /* TrackingMapPresenter.swift */,
+				349C23372541CF5A001D120B /* TrackingMapModel.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		349C233A2541D151001D120B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				349C233B2541D161001D120B /* Networking.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		349C23412541D7A7001D120B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				349C23422541D7BA001D120B /* TrackingService.swift */,
+				349C23452541D7C7001D120B /* NewsService.swift */,
+				349C23482541D7D4001D120B /* CountriesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		349C234B2541D8BE001D120B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				349C234C2541D8D1001D120B /* CountryModel.swift */,
+				349C234F2541D955001D120B /* NewsModel.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		3EF0C2B2B276AC5B4F75905C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9EBA026940B72CDB556E84A /* Pods_PWC_Task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C549182EEE0485264175533F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42FB6B874A6F0087FA1DD35C /* Pods-PWC-Task.debug.xcconfig */,
+				EAA896C7734FC0CB8BBEAA79 /* Pods-PWC-Task.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 349C23292541CB6E001D120B /* Build configuration list for PBXNativeTarget "PWC-Task" */;
 			buildPhases = (
+				73BB15F27213FF730329EC46 /* [CP] Check Pods Manifest.lock */,
 				349C23112541CB6A001D120B /* Sources */,
 				349C23122541CB6A001D120B /* Frameworks */,
 				349C23132541CB6A001D120B /* Resources */,
+				674CB6B1FA74F05E504D0F1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +214,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		674CB6B1FA74F05E504D0F1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PWC-Task/Pods-PWC-Task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PWC-Task/Pods-PWC-Task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PWC-Task/Pods-PWC-Task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73BB15F27213FF730329EC46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PWC-Task-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		349C23112541CB6A001D120B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349C231D2541CB6A001D120B /* ViewController.swift in Sources */,
+				349C23502541D955001D120B /* NewsModel.swift in Sources */,
+				349C23382541CF5A001D120B /* TrackingMapModel.swift in Sources */,
+				349C234D2541D8D1001D120B /* CountryModel.swift in Sources */,
 				349C23192541CB6A001D120B /* AppDelegate.swift in Sources */,
+				349C23462541D7C7001D120B /* NewsService.swift in Sources */,
+				349C23312541CEDD001D120B /* TrackingMapViewController.swift in Sources */,
+				349C23432541D7BA001D120B /* TrackingService.swift in Sources */,
+				349C23352541CEEC001D120B /* TrackingMapPresenter.swift in Sources */,
 				349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */,
+				349C23492541D7D4001D120B /* CountriesService.swift in Sources */,
+				349C233C2541D161001D120B /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +415,7 @@
 		};
 		349C232A2541CB6E001D120B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42FB6B874A6F0087FA1DD35C /* Pods-PWC-Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +435,7 @@
 		};
 		349C232B2541CB6E001D120B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA896C7734FC0CB8BBEAA79 /* Pods-PWC-Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
