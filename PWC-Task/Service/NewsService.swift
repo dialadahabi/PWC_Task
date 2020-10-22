@@ -12,7 +12,7 @@ struct NewsService {
     
     let networking: Networking
     
-    func getNews(params: [String: Any], successHandler success: @escaping (NewsModel) -> Void,
+    func getNews(params: [String: Any], successHandler success: @escaping (NewsWrapperModel) -> Void,
                       failureHandler failure: @escaping (Error?) -> Void) {
         
         networking.request(url: Endpoint.news.path, method: .get, parameters: params, paramEncoding: URLEncoding.default) { (data,error) in
@@ -26,8 +26,8 @@ struct NewsService {
                 return
             }
             do {
-                let countries = try JSONDecoder().decode(NewsModel.self, from: data)
-                success(countries)
+                let news = try JSONDecoder().decode(NewsWrapperModel.self, from: data)
+                success(news)
             } catch {
                 failure(error)
             }
