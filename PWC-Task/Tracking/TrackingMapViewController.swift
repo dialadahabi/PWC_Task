@@ -23,6 +23,7 @@ class TrackingMapViewController: UIViewController {
         super.viewDidLoad()
         presenter.attachView(self)
         presenter.getTrackingData(startDate: formatDate(date: Date()), endDate: formatDate(date: Date()))
+        presenter.getCountries()
     }
     
     private func formatDate(date: Date) -> String {

@@ -9,4 +9,12 @@ import Foundation
 
 class CountryModel: Codable {
     
+    var name: String
+    var code: String
+    var flag: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name, code = "alpha2Code", flag
+    }
+    
 }

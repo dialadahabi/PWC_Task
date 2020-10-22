@@ -31,7 +31,7 @@ class NewsPresenter {
     
     func getNews(country: String) {
         view?.startLoading()
-        let params = ["country": country, "apiKey": "e1992acc1ae946d1940a03bd7332df79"]
+        let params = ["country": country, "category": "health", "apiKey": "e1992acc1ae946d1940a03bd7332df79"]
         newsService.getNews(params: params) { [weak self] (model) in
             self?.newsWrapperModel = model
             self?.view?.finishLoading()
@@ -43,6 +43,6 @@ class NewsPresenter {
     }
     
     func getNewsData() -> [Article]? {
-        return []//newsWrapperModel?.articles
+        return newsWrapperModel?.articles
     }
 }

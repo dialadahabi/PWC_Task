@@ -10,6 +10,8 @@ import UIKit
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var countryFlagImageView: UIImageView!
+    @IBOutlet weak var countryNameLabel: UILabel!
     
     private let presenter = NewsPresenter()
     
@@ -30,7 +32,14 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         cell.configure(article: presenter.getNewsData()?[indexPath.row])
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = URL(string: presenter.getNewsData()?[indexPath.row].url ?? "") {
+            UIApplication.shared.open(url)
+        }
     }
     
 }

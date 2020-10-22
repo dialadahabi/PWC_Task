@@ -17,6 +17,11 @@ class NewsCell: UITableViewCell {
     
     func configure(article: Article?) {
         guard let article = article else {return}
+        newsImageView.setImage(using: article.urlToImage)
+        authorLabel.text = article.author
+        titleLabel.text = article.title
+        descriptionLabel.text = article.articleDescription
+        publishedAtLabel.text = article.publishedAt
     }
     
 }

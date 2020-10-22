@@ -7,5 +7,6 @@ target 'PWC-Task' do
 
   # Pods for PWC-Task
 pod 'Alamofire', '~> 5.2'
+pod 'Kingfisher'
 
 end

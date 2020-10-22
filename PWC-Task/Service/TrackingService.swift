@@ -15,7 +15,7 @@ struct TrackingService {
     func getTrackingData(params: [String: Any], successHandler success: @escaping (TrackingWrapperModel) -> Void,
                       failureHandler failure: @escaping (Error?) -> Void) {
         
-        networking.request(url: Endpoint.tracking.path, method: .get, parameters: params, paramEncoding: URLEncoding.default) { (data,error) in
+        networking.request(url: Endpoint.tracking.path, method: .get, parameters: params) { (data,error) in
             
             guard let data = data else {
                 failure(error)
