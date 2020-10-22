@@ -21,6 +21,7 @@
 		349C23492541D7D4001D120B /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23482541D7D4001D120B /* CountriesService.swift */; };
 		349C234D2541D8D1001D120B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C234C2541D8D1001D120B /* CountryModel.swift */; };
 		349C23502541D955001D120B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C234F2541D955001D120B /* NewsModel.swift */; };
+		349C23552542313A001D120B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23542542313A001D120B /* ViewExtension.swift */; };
 		D5410EF51448C734AF7916BC /* Pods_PWC_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EBA026940B72CDB556E84A /* Pods_PWC_Task.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		349C23482541D7D4001D120B /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		349C234C2541D8D1001D120B /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		349C234F2541D955001D120B /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		349C23542542313A001D120B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		42FB6B874A6F0087FA1DD35C /* Pods-PWC-Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWC-Task.debug.xcconfig"; path = "Target Support Files/Pods-PWC-Task/Pods-PWC-Task.debug.xcconfig"; sourceTree = "<group>"; };
 		A9EBA026940B72CDB556E84A /* Pods_PWC_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PWC_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA896C7734FC0CB8BBEAA79 /* Pods-PWC-Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PWC-Task.release.xcconfig"; path = "Target Support Files/Pods-PWC-Task/Pods-PWC-Task.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		349C23172541CB6A001D120B /* PWC-Task */ = {
 			isa = PBXGroup;
 			children = (
+				349C23532542312B001D120B /* Extension */,
 				349C234B2541D8BE001D120B /* News */,
 				349C23412541D7A7001D120B /* Service */,
 				349C233A2541D151001D120B /* Helper */,
@@ -128,6 +131,14 @@
 				349C234F2541D955001D120B /* NewsModel.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		349C23532542312B001D120B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				349C23542542313A001D120B /* ViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		3EF0C2B2B276AC5B4F75905C /* Frameworks */ = {
@@ -267,6 +278,7 @@
 				349C23192541CB6A001D120B /* AppDelegate.swift in Sources */,
 				349C23462541D7C7001D120B /* NewsService.swift in Sources */,
 				349C23312541CEDD001D120B /* TrackingMapViewController.swift in Sources */,
+				349C23552542313A001D120B /* ViewExtension.swift in Sources */,
 				349C23432541D7BA001D120B /* TrackingService.swift in Sources */,
 				349C23352541CEEC001D120B /* TrackingMapPresenter.swift in Sources */,
 				349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */,

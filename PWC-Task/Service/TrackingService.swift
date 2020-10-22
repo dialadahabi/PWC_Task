@@ -12,7 +12,7 @@ struct TrackingService {
     
     let networking: Networking
     
-    func getTrackingData(params: [String: Any], successHandler success: @escaping (TrackingMapModel) -> Void,
+    func getTrackingData(params: [String: Any], successHandler success: @escaping (TrackingWrapperModel) -> Void,
                       failureHandler failure: @escaping (Error?) -> Void) {
         
         networking.request(url: Endpoint.tracking.path, method: .get, parameters: params, paramEncoding: URLEncoding.default) { (data,error) in
@@ -26,7 +26,7 @@ struct TrackingService {
                 return
             }
             do {
-                let countries = try JSONDecoder().decode(TrackingMapModel.self, from: data)
+                let countries = try JSONDecoder().decode(TrackingWrapperModel.self, from: data)
                 success(countries)
             } catch {
                 failure(error)
