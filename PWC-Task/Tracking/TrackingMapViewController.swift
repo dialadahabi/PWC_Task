@@ -43,11 +43,14 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func configureCountryDetailsView() {
         coordinateToName(location: CLLocation(latitude: mapView.region.center.latitude, longitude: mapView.region.center.longitude)) { [weak self](result, error) in
-            self?.getCountryTrackingDetails(countryName: result?.first?.country ?? "")
+            if var country = result?.first?.country {
+                self?.getCountryTrackingDetails(countryName: &country)
+            }
         }
     }
     
-    private func getCountryTrackingDetails(countryName: String) {
+    private func getCountryTrackingDetails(countryName: inout String) {
+        if countryName == "United States" {countryName = "US"}
         let countryData = CountriesTrackingDataList.shared.countriesTrackingData?.filter({$0.name == countryName}).first
         countryTodayConfirmedCasesCountLabel.text = String(countryData?.todayConfirmed ?? 0)
         countryTodayDeathCountLabel.text = String(countryData?.todayDeaths ?? 0)
@@ -74,8 +77,10 @@ extension TrackingMapViewController: MKMapViewDelegate {
         let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         coordinateToName(location: location) { [weak self] (result, error) in
             self?.countryDetailsView.isHidden = result?.first?.country == nil
-            self?.countryNameLabel.text = result?.first?.country
-            self?.getCountryTrackingDetails(countryName: result?.first?.country ?? "")
+            if var country = result?.first?.country {
+                self?.getCountryTrackingDetails(countryName: &country)
+                self?.countryNameLabel.text = country
+            }
         }
     }
 }
