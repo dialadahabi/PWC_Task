@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3495BB462542DADD009E721F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BB452542DADD009E721F /* ViewControllerExtension.swift */; };
 		3495BB492542E955009E721F /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BB482542E955009E721F /* DateExtension.swift */; };
+		3495BB4D2542F8A2009E721F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BB4C2542F8A2009E721F /* Endpoint.swift */; };
 		349C23192541CB6A001D120B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23182541CB6A001D120B /* AppDelegate.swift */; };
 		349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C231A2541CB6A001D120B /* SceneDelegate.swift */; };
 		349C23202541CB6A001D120B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349C231E2541CB6A001D120B /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		3495BB452542DADD009E721F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		3495BB482542E955009E721F /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3495BB4C2542F8A2009E721F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		349C23152541CB6A001D120B /* PWC-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWC-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		349C23182541CB6A001D120B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349C231A2541CB6A001D120B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				349C233B2541D161001D120B /* Networking.swift */,
+				3495BB4C2542F8A2009E721F /* Endpoint.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				349C23432541D7BA001D120B /* TrackingService.swift in Sources */,
 				349C235D25423370001D120B /* NewsPresenter.swift in Sources */,
 				349C23352541CEEC001D120B /* TrackingMapPresenter.swift in Sources */,
+				3495BB4D2542F8A2009E721F /* Endpoint.swift in Sources */,
 				349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */,
 				349C23492541D7D4001D120B /* CountriesService.swift in Sources */,
 				3495BB492542E955009E721F /* DateExtension.swift in Sources */,

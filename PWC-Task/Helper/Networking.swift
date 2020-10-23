@@ -56,16 +56,3 @@ class Networking: Networkable {
     
 }
 
-enum Endpoint {
-    case tracking
-    case news
-    case countries
-    
-    var path: String {
-        switch self {
-        case .tracking: return "https://api.covid19tracking.narrativa.com/api"
-        case .news: return "https://newsapi.org/v2/top-headlines"
-        case .countries: return "https://restcountries.eu/rest/v2/all"
-        }
-    }
-}

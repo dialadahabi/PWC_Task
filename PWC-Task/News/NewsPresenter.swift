@@ -32,7 +32,7 @@ class NewsPresenter {
     
     func getNews(country: String) {
         view?.startLoading()
-        let params = ["country": country, "category": "health", "apiKey": "e1992acc1ae946d1940a03bd7332df79"]
+        let params = ["country": country, "category": "health", "apiKey": Configuration.apiKey]
         newsService.getNews(params: params) { [weak self] (model) in
             self?.newsWrapperModel = model
             if model.articles.isEmpty {

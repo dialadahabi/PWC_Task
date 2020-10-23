@@ -102,4 +102,8 @@ extension TrackingMapViewController: TrackingMapView {
         emptyView.isHidden = false
         self.showError(title: "Error", message: "Something went wrong, please try again.")
     }
+    
+    func setEmptyView() {
+        emptyView.isHidden = false
+    }
 }

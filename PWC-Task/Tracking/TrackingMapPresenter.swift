@@ -12,6 +12,7 @@ protocol TrackingMapView: class {
     func finishLoading()
     func setSucceeded()
     func didGetError()
+    func setEmptyView()
 }
 
 class TrackingMapPresenter {
@@ -36,6 +37,9 @@ class TrackingMapPresenter {
         trackingService.getTrackingData(params: params) { [weak self] (model) in
             self?.trackingWrapperModel = model
             CountriesTrackingDataList.shared.countriesTrackingData = model.dates.datesArray.first?.countries.countriesList
+            if model.dates.datesArray.isEmpty {
+                self?.view?.setEmptyView()
+            }
             self?.view?.finishLoading()
             self?.view?.setSucceeded()
         } failureHandler: { [weak self] (error) in
