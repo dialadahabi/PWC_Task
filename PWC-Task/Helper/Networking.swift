@@ -30,10 +30,7 @@ class Networking: Networkable {
     private final func configureSession() -> URLSessionConfiguration {
         let sessionConfiguration: URLSessionConfiguration
             sessionConfiguration = URLSessionConfiguration.default
-            sessionConfiguration.allowsConstrainedNetworkAccess = true
-            sessionConfiguration.requestCachePolicy = .reloadRevalidatingCacheData//check later
             sessionConfiguration.timeoutIntervalForRequest = 15
-
         return sessionConfiguration
     }
     
