@@ -52,7 +52,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let url = URL(string: presenter.getNewsData()?[indexPath.row].url ?? "") {
+        let urlString = presenter.getNewsData()?[indexPath.row].url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        if let url = URL(string: urlString) {
             UIApplication.shared.open(url)
         }
     }
