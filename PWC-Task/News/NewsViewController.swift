@@ -27,8 +27,10 @@ class NewsViewController: UIViewController {
     }
     
     private func configureNewsView() {
+        title = countryName
         countryNameLabel.text = countryName
-        let svg = URL(string: CountriesList.shared.countries?.filter({$0.name == countryName}).first?.flag ?? "")!
+        guard let flagURL = URL(string: CountriesList.shared.countries?.filter({$0.name == countryName}).first?.flag ?? "") else {return}
+        let svg = flagURL
         let data = try? Data(contentsOf: svg)
         let receivedimage: SVGKImage = SVGKImage(data: data)
         countryFlagImageView.image = receivedimage.uiImage
