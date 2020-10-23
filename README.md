@@ -20,6 +20,7 @@ This is COVID-19 dashboard to provide a quick glance of the situation worldwide,
 * The tracking api response had dynamic coding keys so, it was i had to manage it.
 * When choosing Egypt, the news feed had arabic links so I had to handle that case.
 * All errors cases have been handled.
+* App was tested and works on all devices. (UI and functionality)
 
 # Cocoapods Used
 - Alamofire
