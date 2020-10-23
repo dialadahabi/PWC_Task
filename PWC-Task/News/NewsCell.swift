@@ -17,7 +17,7 @@ class NewsCell: UITableViewCell {
     
     func configure(article: Article?) {
         guard let article = article else {return}
-        newsImageView.setImage(using: article.urlToImage)
+        newsImageView.setImage(using: article.urlToImage ?? "", placeholderImage: #imageLiteral(resourceName: "ic_news_placeholder"))
         authorLabel.text = article.author
         titleLabel.text = article.title
         descriptionLabel.text = article.articleDescription

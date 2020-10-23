@@ -21,8 +21,6 @@ class TrackingMapPresenter {
     private let countriesService = CountriesService(networking: Networking())
     
     private var trackingWrapperModel: TrackingWrapperModel?
-    private var countries: [CountryModel]?
-
     
     func attachView(_ view: TrackingMapView) {
         self.view = view
@@ -50,8 +48,8 @@ class TrackingMapPresenter {
     }
     
     func getCountries() {
-        countriesService.getCountries { [weak self] (model) in
-            self?.countries = model
+        countriesService.getCountries { (model) in
+            CountriesList.shared.countries = model
         } failureHandler: { [weak self] (error) in
             self?.view?.didGetError()
         }

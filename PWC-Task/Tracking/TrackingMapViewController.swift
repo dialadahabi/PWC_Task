@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class TrackingMapViewController: UIViewController {
+class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var totalConfirmedCasesCountLabel: UILabel!
@@ -24,6 +24,23 @@ class TrackingMapViewController: UIViewController {
         presenter.attachView(self)
         presenter.getTrackingData(startDate: formatDate(date: Date()), endDate: formatDate(date: Date()))
         presenter.getCountries()
+        configureMapView()
+    }
+    
+    private func configureMapView() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(self.handleTap(_:)))
+        gestureRecognizer.delegate = self
+        mapView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        let location = gestureRecognizer.location(in: mapView)
+        let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { [weak self] (result, error) in
+            let newsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
+            newsVC.countryName = result?.first?.country
+            self?.navigationController?.pushViewController(newsVC, animated: true)
+        }
     }
     
     private func formatDate(date: Date) -> String {

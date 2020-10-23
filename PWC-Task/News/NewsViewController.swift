@@ -6,19 +6,32 @@
 //
 
 import UIKit
+import SVGKit
 
 class NewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countryFlagImageView: UIImageView!
     @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet var emptyView: UIView!
+    
+    var countryName: String?
     
     private let presenter = NewsPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(self)
-        presenter.getNews(country: "us")
+        configureNewsView()
+        presenter.getNews(country: CountriesList.shared.countries?.filter({$0.name == countryName}).first?.code ?? "")
+    }
+    
+    private func configureNewsView() {
+        countryNameLabel.text = countryName
+        let svg = URL(string: CountriesList.shared.countries?.filter({$0.name == countryName}).first?.flag ?? "")!
+        let data = try? Data(contentsOf: svg)
+        let receivedimage: SVGKImage = SVGKImage(data: data)
+        countryFlagImageView.image = receivedimage.uiImage
     }
     
 }
@@ -61,5 +74,11 @@ extension NewsViewController: NewsView {
         
     }
     
+    func setEmptyView() {
+        tableView.backgroundView = emptyView
+        countryFlagImageView.isHidden = true
+        countryNameLabel.isHidden = true
+        tableView.separatorStyle = .none
+    }
     
 }

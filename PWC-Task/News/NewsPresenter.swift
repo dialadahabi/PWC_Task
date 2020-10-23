@@ -12,6 +12,7 @@ protocol NewsView: class {
     func finishLoading()
     func setSucceeded()
     func didGetError()
+    func setEmptyView()
 }
 
 class NewsPresenter {
@@ -34,6 +35,9 @@ class NewsPresenter {
         let params = ["country": country, "category": "health", "apiKey": "e1992acc1ae946d1940a03bd7332df79"]
         newsService.getNews(params: params) { [weak self] (model) in
             self?.newsWrapperModel = model
+            if model.articles.isEmpty {
+                self?.view?.setEmptyView()
+            }
             self?.view?.finishLoading()
             self?.view?.setSucceeded()
         } failureHandler: { [weak self] (error) in

@@ -7,6 +7,16 @@
 
 import Foundation
 
+class CountriesList {
+    
+    static let shared = CountriesList()
+    
+    private init(){}
+    
+    var countries: [CountryModel]?
+
+}
+
 class CountryModel: Codable {
     
     var name: String
