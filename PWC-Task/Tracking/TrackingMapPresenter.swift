@@ -20,7 +20,7 @@ class TrackingMapPresenter {
     private let trackingService = TrackingService(networking: Networking())
     private let countriesService = CountriesService(networking: Networking())
     
-    private var trackingWrapperModel: TrackingWrapperModel?
+    private var trackingWrapperModel: TrackingWrapper?
     
     func attachView(_ view: TrackingMapView) {
         self.view = view
@@ -35,6 +35,7 @@ class TrackingMapPresenter {
         let params = ["date_from": startDate, "date_to": endDate]
         trackingService.getTrackingData(params: params) { [weak self] (model) in
             self?.trackingWrapperModel = model
+            CountriesTrackingDataList.shared.countriesTrackingData = model.dates.datesArray.first?.countries.countriesList
             self?.view?.finishLoading()
             self?.view?.setSucceeded()
         } failureHandler: { [weak self] (error) in
@@ -43,7 +44,7 @@ class TrackingMapPresenter {
         }
     }
     
-    func getTrackingData() -> TrackingWrapperModel? {
+    func getTrackingData() -> TrackingWrapper? {
         return trackingWrapperModel
     }
     

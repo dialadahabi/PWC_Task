@@ -15,6 +15,8 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var todayConfirmedCasesCountLabel: UILabel!
     @IBOutlet weak var totalDeathsCountLabel: UILabel!
     @IBOutlet weak var todayDeathCountLabel: UILabel!
+    @IBOutlet weak var countryTodayDeathCountLabel: UILabel!
+    @IBOutlet weak var countryTodayConfirmedCasesCountLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var countryDetailsView: UIView!
@@ -27,7 +29,7 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(self)
-        presenter.getTrackingData(startDate: formatDate(date: Date()), endDate: formatDate(date: Date()))
+        presenter.getTrackingData(startDate: Date().toString(), endDate: Date().toString())
         presenter.getCountries()
         configureMapView()
     }
@@ -39,6 +41,18 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
         mapView.addGestureRecognizer(gestureRecognizer)
     }
     
+    private func configureCountryDetailsView() {
+        coordinateToName(location: CLLocation(latitude: mapView.region.center.latitude, longitude: mapView.region.center.longitude)) { [weak self](result, error) in
+            self?.getCountryTrackingDetails(countryName: result?.first?.country ?? "")
+        }
+    }
+    
+    private func getCountryTrackingDetails(countryName: String) {
+        let countryData = CountriesTrackingDataList.shared.countriesTrackingData?.filter({$0.name == countryName}).first
+        countryTodayConfirmedCasesCountLabel.text = String(countryData?.todayConfirmed ?? 0)
+        countryTodayDeathCountLabel.text = String(countryData?.todayDeaths ?? 0)
+    }
+    
     @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
         let location = gestureRecognizer.location(in: mapView)
         let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
@@ -47,12 +61,6 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
             newsVC.countryName = result?.first?.country
             self?.navigationController?.pushViewController(newsVC, animated: true)
         }
-    }
-    
-    private func formatDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: date)
     }
     
     private func coordinateToName(location: CLLocation, completion: @escaping CLGeocodeCompletionHandler) {
@@ -67,6 +75,7 @@ extension TrackingMapViewController: MKMapViewDelegate {
         coordinateToName(location: location) { [weak self] (result, error) in
             self?.countryDetailsView.isHidden = result?.first?.country == nil
             self?.countryNameLabel.text = result?.first?.country
+            self?.getCountryTrackingDetails(countryName: result?.first?.country ?? "")
         }
     }
 }
@@ -81,9 +90,10 @@ extension TrackingMapViewController: TrackingMapView {
     }
     
     func setSucceeded() {
+        configureCountryDetailsView()
         let trackingModel = presenter.getTrackingData()
-        totalConfirmedCasesCountLabel.text = String(trackingModel?.total.todayConfirmedCases ?? 0)
-        todayConfirmedCasesCountLabel.text = String(trackingModel?.total.todayNewConfirmedCases ?? 0)
+        totalConfirmedCasesCountLabel.text = String(trackingModel?.total.todayConfirmed ?? 0)
+        todayConfirmedCasesCountLabel.text = String(trackingModel?.total.todayNewConfirmed ?? 0)
         totalDeathsCountLabel.text = String(trackingModel?.total.todayDeaths ?? 0)
         todayDeathCountLabel.text = String(trackingModel?.total.todayNewDeaths ?? 0)
     }

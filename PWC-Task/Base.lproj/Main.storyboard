@@ -211,6 +211,8 @@
                     <connections>
                         <outlet property="countryDetailsView" destination="jgx-fj-S0w" id="gmk-X9-HzZ"/>
                         <outlet property="countryNameLabel" destination="PxG-fX-TYC" id="V8y-2d-QGf"/>
+                        <outlet property="countryTodayConfirmedCasesCountLabel" destination="gLG-Ic-JGa" id="T6E-hG-irA"/>
+                        <outlet property="countryTodayDeathCountLabel" destination="vvY-6F-W6d" id="Hqy-2f-FU8"/>
                         <outlet property="emptyView" destination="Laj-nJ-tyF" id="g5u-Gc-VPy"/>
                         <outlet property="mapView" destination="1bZ-Jz-qYA" id="lfQ-63-usB"/>
                         <outlet property="todayConfirmedCasesCountLabel" destination="bL0-re-pSJ" id="a0G-xI-mCn"/>
