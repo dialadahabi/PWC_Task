@@ -233,68 +233,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6C-tm-XHd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6C-tm-XHd">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="250" id="Xcz-cN-idk" customClass="NewsCell" customModule="PWC_Task" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="Xcz-cN-idk" customClass="NewsCell" customModule="PWC_Task" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="258"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xcz-cN-idk" id="658-11-ZfM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owq-6F-E8B">
-                                                    <rect key="frame" x="162" y="11" width="53" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020 Zozo Championship leaderboard: Live coverage, golf scores, Tiger Woods score today in Round 1 - CBSSports.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXz-6Z-XFg">
-                                                    <rect key="frame" x="162" y="40" width="241" height="101.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live scores, updates and highlights from Round 1 of the Zozo Championship with Tiger Woods back in action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-Pw-4d1">
-                                                    <rect key="frame" x="20" y="145" width="383" height="61"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="61" id="GtX-cM-rPJ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-10-22T20:36:00Z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T1-Od-ypx">
-                                                    <rect key="frame" x="20" y="217" width="182" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-IK-ycQ">
-                                                    <rect key="frame" x="20" y="9" width="134" height="128"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="EK2-7f-u8R"/>
-                                                        <constraint firstAttribute="width" constant="134" id="TKr-BH-Mrd"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4D8-Tq-y0e">
+                                                    <rect key="frame" x="10" y="10" width="394" height="238"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MGk-TZ-gV8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="197"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uAW-6H-rYC">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="128"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0aB-IK-ycQ">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="134" height="128"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="128" id="EK2-7f-u8R"/>
+                                                                                <constraint firstAttribute="width" constant="134" id="TKr-BH-Mrd"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <stackView opaque="NO" tag="5" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D7o-bC-cMz">
+                                                                            <rect key="frame" x="142" y="0.0" width="252" height="128"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owq-6F-E8B">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="20.5"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020 Zozo Championship leaderboard: Live coverage, golf scores, Tiger Woods score today in Round 1 - CBSSports.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXz-6Z-XFg">
+                                                                                    <rect key="frame" x="0.0" y="28.5" width="252" height="99.5"/>
+                                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live scores, updates and highlights from Round 1 of the Zozo Championship with Tiger Woods back in action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-Pw-4d1">
+                                                                    <rect key="frame" x="0.0" y="136" width="394" height="61"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="61" id="GtX-cM-rPJ"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-10-22T20:36:00Z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T1-Od-ypx">
+                                                            <rect key="frame" x="0.0" y="217" width="182" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Owq-6F-E8B" secondAttribute="trailing" constant="20" symbolic="YES" id="3dk-oZ-MAw"/>
-                                                <constraint firstItem="CyW-Pw-4d1" firstAttribute="top" secondItem="dXz-6Z-XFg" secondAttribute="bottom" constant="3.5" id="GJO-fz-4pH"/>
-                                                <constraint firstItem="0aB-IK-ycQ" firstAttribute="leading" secondItem="658-11-ZfM" secondAttribute="leading" constant="20" symbolic="YES" id="Hpi-W7-HsW"/>
-                                                <constraint firstItem="Owq-6F-E8B" firstAttribute="top" secondItem="658-11-ZfM" secondAttribute="topMargin" id="KCw-Jx-xcE"/>
-                                                <constraint firstItem="3T1-Od-ypx" firstAttribute="top" secondItem="CyW-Pw-4d1" secondAttribute="bottom" constant="11" id="PkQ-XC-KVL"/>
-                                                <constraint firstItem="Owq-6F-E8B" firstAttribute="leading" secondItem="0aB-IK-ycQ" secondAttribute="trailing" constant="8" symbolic="YES" id="VKX-uo-vkK"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3T1-Od-ypx" secondAttribute="bottom" constant="1" id="WCs-us-2R2"/>
-                                                <constraint firstAttribute="trailing" secondItem="dXz-6Z-XFg" secondAttribute="trailing" constant="11" id="XKw-rU-R7v"/>
-                                                <constraint firstItem="0aB-IK-ycQ" firstAttribute="top" secondItem="658-11-ZfM" secondAttribute="top" constant="9" id="XWw-0p-duU"/>
-                                                <constraint firstItem="CyW-Pw-4d1" firstAttribute="leading" secondItem="658-11-ZfM" secondAttribute="leading" constant="20" symbolic="YES" id="Ykw-n7-dGO"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3T1-Od-ypx" secondAttribute="trailing" constant="20" symbolic="YES" id="eKh-Xx-Mag"/>
-                                                <constraint firstItem="dXz-6Z-XFg" firstAttribute="top" secondItem="Owq-6F-E8B" secondAttribute="bottom" constant="8" symbolic="YES" id="hfb-rO-oei"/>
-                                                <constraint firstItem="3T1-Od-ypx" firstAttribute="leading" secondItem="658-11-ZfM" secondAttribute="leadingMargin" id="p7m-ij-4Aj"/>
-                                                <constraint firstAttribute="trailing" secondItem="CyW-Pw-4d1" secondAttribute="trailing" constant="11" id="vga-Wt-1I6"/>
-                                                <constraint firstItem="dXz-6Z-XFg" firstAttribute="leading" secondItem="0aB-IK-ycQ" secondAttribute="trailing" constant="8" symbolic="YES" id="ykY-ve-lfG"/>
+                                                <constraint firstItem="4D8-Tq-y0e" firstAttribute="leading" secondItem="658-11-ZfM" secondAttribute="leading" constant="10" id="LfF-Ha-2wB"/>
+                                                <constraint firstAttribute="bottom" secondItem="4D8-Tq-y0e" secondAttribute="bottom" constant="10" id="esF-Ck-h1I"/>
+                                                <constraint firstAttribute="trailing" secondItem="4D8-Tq-y0e" secondAttribute="trailing" constant="10" id="q5a-53-pGF"/>
+                                                <constraint firstItem="4D8-Tq-y0e" firstAttribute="top" secondItem="658-11-ZfM" secondAttribute="top" constant="10" id="r3h-UM-eIg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
