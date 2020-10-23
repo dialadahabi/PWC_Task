@@ -15,6 +15,12 @@ This is COVID-19 dashboard to provide a quick glance of the situation worldwide,
 * I have chosen the MVP design pattern as I thought it would be the most appropriate for this task.
 * Alamofire was used to make requests, kingfisher to load the image urls for the news feed and SVGKit to load the svg image for the country flags.
 * A placeholder was added for the news feed as some articles did not have images.
+* When the first is first loaded, countries and tracking api requests are called. I chose to call the countries api in the background to minimize api call requests so that the api is not called everytime the user chooses a country. 
+* Everytime the users scrolls the map and passes through a country (using the pin), the country's tracking data will be retreived from the tracking response that was already called at the beginning, and the details will be shown in the transparent view (Confirmed Cases, Confirmed Deaths).
+* The tracking api response had dynamic coding keys so, it was i had to manage it.
+* When choosing Egypt, the news feed had arabic links so I had to handle that case.
+* All errors cases have been handled.
+* App was tested and works on all devices. (UI and functionality)
 
 # Cocoapods Used
 - Alamofire
