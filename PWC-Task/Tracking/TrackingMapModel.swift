@@ -17,7 +17,7 @@ class CountriesTrackingDataList {
 
 }
 
-// MARK: - Welcome
+// MARK: - TrackingWrapper
 struct TrackingWrapper: Codable {
     let dates: DatesWrapper
     let total: Total
