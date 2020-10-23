@@ -16,6 +16,11 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var totalDeathsCountLabel: UILabel!
     @IBOutlet weak var todayDeathCountLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var countryNameLabel: UILabel!
+    @IBOutlet weak var countryDetailsView: UIView!
+    
+    private var center: CLLocationCoordinate2D?
+    private var geocoder = CLGeocoder()
     
     private let presenter = TrackingMapPresenter()
     
@@ -28,6 +33,7 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     private func configureMapView() {
+        mapView.delegate = self
         let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(self.handleTap(_:)))
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
@@ -36,7 +42,7 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
         let location = gestureRecognizer.location(in: mapView)
         let coordinate = mapView.convert(location, toCoordinateFrom: mapView)
-        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { [weak self] (result, error) in
+        coordinateToName(location: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) {[weak self] (result, error) in
             let newsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
             newsVC.countryName = result?.first?.country
             self?.navigationController?.pushViewController(newsVC, animated: true)
@@ -49,6 +55,20 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
         return formatter.string(from: date)
     }
     
+    private func coordinateToName(location: CLLocation, completion: @escaping CLGeocodeCompletionHandler) {
+        geocoder.reverseGeocodeLocation(location, completionHandler: completion)
+    }
+    
+}
+
+extension TrackingMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let location = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        coordinateToName(location: location) { [weak self] (result, error) in
+            self?.countryDetailsView.isHidden = result?.first?.country == nil
+            self?.countryNameLabel.text = result?.first?.country
+        }
+    }
 }
 
 extension TrackingMapViewController: TrackingMapView {
