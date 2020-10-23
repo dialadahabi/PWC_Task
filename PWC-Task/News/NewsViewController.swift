@@ -73,14 +73,15 @@ extension NewsViewController: NewsView {
     }
     
     func didGetError() {
-        
+        self.showError(title: "Error", message: "Something went wrong, please try again.")
     }
     
     func setEmptyView() {
+        tableView.separatorStyle = .none
         tableView.backgroundView = emptyView
+        tableView.reloadData()
         countryFlagImageView.isHidden = true
         countryNameLabel.isHidden = true
-        tableView.separatorStyle = .none
     }
     
 }

@@ -42,6 +42,7 @@ class NewsPresenter {
             self?.view?.setSucceeded()
         } failureHandler: { [weak self] (error) in
             self?.view?.finishLoading()
+            self?.view?.setEmptyView()
             self?.view?.didGetError()
         }
     }

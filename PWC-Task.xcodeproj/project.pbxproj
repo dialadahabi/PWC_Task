@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3495BB462542DADD009E721F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3495BB452542DADD009E721F /* ViewControllerExtension.swift */; };
 		349C23192541CB6A001D120B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C23182541CB6A001D120B /* AppDelegate.swift */; };
 		349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349C231A2541CB6A001D120B /* SceneDelegate.swift */; };
 		349C23202541CB6A001D120B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 349C231E2541CB6A001D120B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3495BB452542DADD009E721F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		349C23152541CB6A001D120B /* PWC-Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWC-Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		349C23182541CB6A001D120B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		349C231A2541CB6A001D120B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				349C23542542313A001D120B /* ViewExtension.swift */,
 				349C2364254249BA001D120B /* ImageViewExtension.swift */,
+				3495BB452542DADD009E721F /* ViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				349C23352541CEEC001D120B /* TrackingMapPresenter.swift in Sources */,
 				349C231B2541CB6A001D120B /* SceneDelegate.swift in Sources */,
 				349C23492541D7D4001D120B /* CountriesService.swift in Sources */,
+				3495BB462542DADD009E721F /* ViewControllerExtension.swift in Sources */,
 				349C2365254249BA001D120B /* ImageViewExtension.swift in Sources */,
 				349C233C2541D161001D120B /* Networking.swift in Sources */,
 			);
