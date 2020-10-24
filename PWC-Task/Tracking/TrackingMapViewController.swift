@@ -51,6 +51,7 @@ class TrackingMapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private func getCountryTrackingDetails(countryName: inout String) {
         if countryName == "United States" {countryName = "US"}
+        if countryName == "Democratic Republic of the Congo" {countryName = "Congo (Brazzaville)"}
         let countryData = CountriesTrackingDataList.shared.countriesTrackingData?.filter({$0.name == countryName}).first
         countryTodayConfirmedCasesCountLabel.text = String(countryData?.todayConfirmed ?? 0)
         countryTodayDeathCountLabel.text = String(countryData?.todayDeaths ?? 0)
